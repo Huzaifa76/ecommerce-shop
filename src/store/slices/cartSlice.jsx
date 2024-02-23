@@ -6,7 +6,7 @@ const initialState = {
     items: ProductData,
     totalQuantity: 0,
     totalPrice: 0,
-}
+};
 
 const cartSlice = createSlice({
     name: "cart",
@@ -17,7 +17,7 @@ const cartSlice = createSlice({
             if (find >= 0) {
                 state.cart[find].quantity += 1;
             } else {
-                state.cart.push(action.payload)
+                state.cart.push(action.payload);
             }
         },
         getCartTotal: (state) => {
@@ -37,9 +37,22 @@ const cartSlice = createSlice({
             state.totalPrice = parseFloat(totalPrice.toFixed(2));
             state.totalQuantity = totalQuantity;
         },
+        removeFromCart: (state, action) => {
+            state.cart = state.cart.filter(item => item.id !== action.payload);
+        },
+        updateQuantity: (state, action) => {
+            const { productId, newQuantity } = action.payload;
+            const productToUpdate = state.cart.find(item => item.id === productId);
+            if (productToUpdate) {
+                if (newQuantity > 0) {
+                    productToUpdate.quantity = newQuantity;
+                } else {
+                    productToUpdate.quantity = 0;
+                }
+            }
+        },
     },
 });
 
-export const { addToCart, getCartTotal } = cartSlice.actions;
+export const { addToCart, getCartTotal, removeFromCart, updateQuantity } = cartSlice.actions;
 export default cartSlice.reducer;
-

@@ -5,7 +5,7 @@
 .banner_img img {
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 530px;
 }
 .navbar{
   box-shadow: 0px 0px 5px lightblue;
@@ -21,7 +21,7 @@
 }
 .banner_content {
   position: absolute;
-  top: 280px;
+  top: 260px;
   left: 60px;
 }
 .banner_content h1{
@@ -58,21 +58,39 @@
   border: none;
 }
 .btn:hover{
-  background-color: #75d5e9;
-  color: black;
+  background-color: black;
+  color: white;
   border: none;
 }
-.btn:active{
+.btn_shop{
+  background-color: black;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 0;
+  border: none;
+}
+.btn_shop:hover{
   background-color: #75d5e9;
+  color: black;
 }
 .contentbar{
-  padding: 150px;
+  padding: 70px 60px;
+}
+.empty-cart{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column  ;
+  height: 80vh;
 }
 
 @media screen and (max-width: 1024px){
   .banner_content {
-    top: 150px;
+    top: 230px;
     left: 30px;
+  }
+  .banner_img img {
+    height: 350px;
   }
   .banner_content h1{
     font-size: 50px;
@@ -92,8 +110,15 @@
     margin-top: -10px;
     margin-bottom: -10px;
   }
+  .banner_content {
+    top: 180px;
+    left: 30px;
+  }
+  .banner_img img {
+    height: 300px;
+  }
   .banner_content h1{
-    font-size: 40px;
+    font-size: 35px;
     line-height: 50px;
     font-weight: 600;
   }
