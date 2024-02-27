@@ -1,10 +1,15 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import {  useSelector } from 'react-redux'
+import {  useDispatch, useSelector } from 'react-redux'
+import { getCartTotal } from '../store/slices/cartSlice'
 
 const Navbar = () => {
-  // const cartItemsCount = useSelector((state) => state.cart.length);
-  // console.log(cartItemsCount);
+  const {cart, totalQuantity}=useSelector((state)=>state.allcart);
+
+  const dispatch=useDispatch();
+  useEffect(() => {
+    dispatch(getCartTotal())
+  }, [cart]);
   return (
     <> 
     <div className="top_bar text-center text-white py-2 px-lg-2 px-sm-0" style={{backgroundColor:"#040406",fontSize:"14px",fontWeight:'bold'}}><marquee width = "50%" direction = "right"><i className="bi bi-box-seam-fill"></i> Deliver all over the Pakistan. Free Delivery on the order above 50000 <i className="bi bi-box-seam-fill"></i> </marquee></div>
@@ -23,7 +28,7 @@ const Navbar = () => {
           <Link className="nav-link text-black" to="/shop">All Products</Link>
         </li>
       </ul>
-      <Link className='btn' style={{textDecoration:'none'}} to='/cart'><i className="bi bi-cart3"></i> Cart</Link>
+      <Link className='btn' style={{textDecoration:'none'}} to='/cart'><i className="bi bi-cart3"></i> Cart {totalQuantity}</Link>
     </div>
   </div>
 </nav>
