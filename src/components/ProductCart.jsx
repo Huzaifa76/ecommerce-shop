@@ -28,7 +28,7 @@ const ProductCart = () => {
                 <div className="empty-cart">
                     <h1 className="text-center">Your cart is empty</h1>
                     <p>Plz go back to store and add products into cart</p>
-                    <Link className="btn" to="/store">
+                    <Link className="btn" to="/shop">
                         Back to Store
                     </Link>
                 </div> 

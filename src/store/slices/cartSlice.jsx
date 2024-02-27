@@ -44,10 +44,10 @@ const cartSlice = createSlice({
             const { productId, newQuantity } = action.payload;
             const productToUpdate = state.cart.find(item => item.id === productId);
             if (productToUpdate) {
-                if (newQuantity > 0) {
+                if (newQuantity > 1) {
                     productToUpdate.quantity = newQuantity;
                 } else {
-                    productToUpdate.quantity = 0;
+                    productToUpdate.quantity = 1;
                 }
             }
         },

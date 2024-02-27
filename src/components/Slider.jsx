@@ -9,7 +9,7 @@ const Slider = () => {
       <div className="banner_content">
       <h1>OPPO A78</h1>
       <h6 className='mb-4'>FHD+ AMOLED Display <br /> 67W SUPERVOOCTM <br /> 8GB + 8GB Extended RAM</h6>
-      <Link className='btn_shop' to='/store' style={{textDecoration:'none'}} >Shop Now</Link>
+      <Link className='btn_shop' to='/shop' style={{textDecoration:'none'}} >Shop Now</Link>
       </div>
     </div>
     </>

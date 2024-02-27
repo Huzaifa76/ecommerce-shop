@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {  useSelector } from 'react-redux'
 
 const Navbar = () => {
+  // const cartItemsCount = useSelector((state) => state.cart.length);
+  // console.log(cartItemsCount);
   return (
     <> 
     <div className="top_bar text-center text-white py-2 px-lg-2 px-sm-0" style={{backgroundColor:"#040406",fontSize:"14px",fontWeight:'bold'}}><marquee width = "50%" direction = "right"><i className="bi bi-box-seam-fill"></i> Deliver all over the Pakistan. Free Delivery on the order above 50000 <i className="bi bi-box-seam-fill"></i> </marquee></div>
@@ -14,10 +17,10 @@ const Navbar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+          <Link className="nav-link text-black" aria-current="page" to="/">Home</Link>
         </li>
-        <li className="nav-item mx-lg-3 mx-sm-0">
-          <Link className="nav-link" to="/store">All Products</Link>
+        <li className="nav-item mx-lg-4 mx-sm-0">
+          <Link className="nav-link text-black" to="/shop">All Products</Link>
         </li>
       </ul>
       <Link className='btn' style={{textDecoration:'none'}} to='/cart'><i className="bi bi-cart3"></i> Cart</Link>

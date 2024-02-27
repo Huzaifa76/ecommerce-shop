@@ -16,7 +16,7 @@ const ProductCard = () => {
             <div className="cards py-5">
                 <div className="container">
                     <h1 className="text-center mb-4 ">All Products</h1>
-                    <div className="row gx-4 gy-5">
+                    <div className="row gx-4 gy-4">
                         {items.map((item) => (
                             <div className="col-lg-3 col-md-4 col-sm-6 col-12" key={item.id}>
                                 <div className="card">
